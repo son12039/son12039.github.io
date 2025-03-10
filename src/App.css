@@ -1,0 +1,15 @@
+.test {
+  background-color: rgb(107, 29, 29);
+  width: 100vw;
+  height: 100px;
+  z-index: 10;
+}
+.test1 {
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
+  width: 10px;
+  border: none;
+  display: inline-block; /* 블록이 아니라 인라인처럼 동작하도록 설정 */
+  line-height: normal;
+}

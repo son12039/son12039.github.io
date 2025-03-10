@@ -1,32 +1,31 @@
 import { useState, useEffect } from "react";
 import "../scss/BackgroundGlow.scss";
+import { v4 as uu } from "uuid";
 
 const BackgroundAnimation = () => {
   // 상태로 div들을 배열로 관리
-  const [divs, setDivs] = useState([]);
+  const [lights, setLights] = useState([]);
 
   // 랜덤 위치를 계산하는 함수
   const getRandomPosition = () => {
-    const maxX = window.innerWidth - 100; // 화면의 가로 크기
-    const maxY = window.innerHeight - 100; // 화면의 세로 크기
-    const randomX = Math.floor(Math.random() * maxX); // 랜덤 X 좌표
-    const randomY = Math.floor(Math.random() * maxY); // 랜덤 Y 좌표
+    const randomX = Math.floor(Math.random() * 100); // 0~100 범위의 랜덤 X 좌표 (화면 크기 비례 X)
+    const randomY = Math.floor(Math.random() * 100); // 0~100 범위의 랜덤 Y 좌표 (화면 크기 비례 Y)
     return { top: randomY, left: randomX };
   };
 
   // 여러 개의 div를 랜덤 위치에 추가하는 함수
-  const addDiv = () => {
+  const addLight = () => {
     const { top, left } = getRandomPosition(); // 랜덤 좌표 계산
-    return { id: Date.now() + Math.random(), top, left }; // 고유한 id를 생성하여 div 정보 반환
+    return { id: uu(), top, left }; // 고유한 id를 생성하여 div 정보 반환
   };
 
   // useEffect로 컴포넌트가 렌더링된 후 div 100개 추가
   useEffect(() => {
-    const newDivs = [];
+    const newLights = [];
     for (let i = 0; i < 100; i++) {
-      newDivs.push(addDiv()); // 새로운 div 정보 추가
+      newLights.push(addLight()); // 새로운 div 정보 추가
     }
-    setDivs(newDivs); // 한 번에 div들을 상태에 저장
+    setLights(newLights); // 한 번에 div들을 상태에 저장
   }, []);
 
   return (
@@ -34,14 +33,14 @@ const BackgroundAnimation = () => {
       <div className="back">
         <p>이건빽이야</p>
         {/* 상태에 있는 div들을 화면에 렌더링 */}
-        {divs.map((div) => (
+        {lights.map((light) => (
           <div
-            key={div.id} // 고유 id로 key 설정
+            key={light.id} // 고유 id로 key 설정
             className="new-div"
             style={{
-              position: "absolute",
-              top: `${div.top}px`,
-              left: `${div.left}px`,
+              position: "fixed", // 화면 기준으로 고정
+              top: `${light.top}vh`, // 화면 크기 비례하여 고정
+              left: `${light.left}vw`, // 화면 크기 비례하여 고정
               backgroundColor: "white",
               width: "5px",
               height: "5px",
