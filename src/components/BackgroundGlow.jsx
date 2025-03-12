@@ -31,12 +31,11 @@ const BackgroundAnimation = () => {
   return (
     <>
       <div className="back">
-        <p>이건빽이야</p>
         {/* 상태에 있는 div들을 화면에 렌더링 */}
         {lights.map((light) => (
           <div
             key={light.id} // 고유 id로 key 설정
-            className="new-div"
+            className="lights"
             style={{
               position: "fixed", // 화면 기준으로 고정
               top: `${light.top}vh`, // 화면 크기 비례하여 고정
