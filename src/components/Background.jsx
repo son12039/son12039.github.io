@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import "../scss/BackgroundGlow.scss";
 import { v4 as uu } from "uuid";
 
-const BackgroundAnimation = () => {
+const Background = () => {
   // 상태로 div들을 배열로 관리
   const [lights, setLights] = useState([]);
 
@@ -52,4 +52,4 @@ const BackgroundAnimation = () => {
   );
 };
 
-export default BackgroundAnimation;
+export default Background;
