@@ -10,9 +10,12 @@ const Navigation = () => {
 
   return (
     <nav>
-      <button onClick={goToHome}>Home</button>
-      <button onClick={goToProjects}>Projects</button>
-      <button onClick={goToAbout}>About</button>
+      <div className="JB">JB.</div>
+      <div className="btn">
+        <button onClick={goToHome}>Home</button>
+        <button onClick={goToProjects}>Projects</button>
+        <button onClick={goToAbout}>About</button>
+      </div>
     </nav>
   );
 };
