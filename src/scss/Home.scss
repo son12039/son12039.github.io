@@ -1,0 +1,70 @@
+* {
+  color: rgb(255, 255, 255);
+}
+
+.home-content {
+  padding-top: 100px;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center; /* 수평 중앙 정렬 */
+  * {
+    font-size: 2rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column; /* 세로 배치 */
+    align-items: center; /* 중앙 정렬 */
+  }
+
+  .right {
+    padding-right: 5vw; /* 오른쪽 패딩을 조금 줄여서 중앙에 가까워지도록 */
+  }
+
+  .left {
+    left: 0;
+    padding-left: 15vw; /* 왼쪽 패딩을 조금 줄여서 중앙에 가까워지도록 */
+    align-items: flex-start;
+    // justify-content: center;
+  }
+
+  .write {
+    font-size: 24px;
+    color: #fff;
+    margin-top: 10px;
+    position: relative;
+    text-align: left; /* 왼쪽 정렬 */
+  }
+
+  .write::after {
+    content: "|"; /* 커서 모양 */
+    position: absolute;
+    right: -5px;
+    animation: blink 0.8s infinite;
+  }
+
+  @keyframes blink {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}
+
+.name {
+  color: rgb(169, 27, 182);
+  font-weight: bolder;
+}
+
+.Dev {
+  width: 45vw; /* 뷰포트 너비의 45% */
+  height: auto; /* 자동으로 높이 비율 맞추기 */
+  max-height: 45vh; /* 뷰포트 높이의 45% */
+  object-fit: contain;
+}

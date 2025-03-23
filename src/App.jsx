@@ -10,10 +10,8 @@ const App = () => {
   return (
     <Router>
       <Background />
-      <div className="front" style={{ height: "300vh" }}>
-        <Navigation />
-        <AppRoutes />
-      </div>
+      <Navigation />
+      <AppRoutes />
     </Router>
   );
 };

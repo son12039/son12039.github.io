@@ -2,8 +2,9 @@ nav {
   display: flex; /* 버튼들을 가로로 배치 */
   justify-content: center; /* 버튼들을 중앙에 정렬 */
   align-items: center; /* 세로로도 중앙에 정렬 */
-  background-color: #333; /* 헤더 배경색 */
+  background-color: transparent; /* 헤더 배경색 */
   padding: 20px 0; /* 상하 여백 */
+  justify-content: space-around;
 }
 
 nav button {
@@ -13,13 +14,20 @@ nav button {
   color: white; /* 버튼 글자 색상 */
   border: none; /* 버튼 테두리 없애기 */
   border-radius: 5px; /* 버튼 모서리 둥글게 */
-  font-size: 16px; /* 버튼 폰트 크기 */
+  font-size: 20px; /* 버튼 폰트 크기 */
   cursor: pointer; /* 마우스 커서를 포인터로 변경 */
-  transition: background-color 0.3s ease; /* 버튼 색상 변화 애니메이션 */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* 버튼 색상 변화 애니메이션 */
+
+  &:nth-of-type(4) {
+    /* 4번째 버튼에 스타일 추가 */
+    background-color: rgba(135, 60, 170, 0.5); /* 예시로 배경색을 변경 */
+    color: black; /* 글자 색상 변경 */
+  }
 }
 
 nav button:hover {
-  background-color: #45a049; /* hover 시 버튼 색상 */
+  background-color: rgba(61, 192, 131, 0.5); /* hover 시 버튼 색상 */
+  transform: translateY(-3px);
 }
 
 nav button:focus {
@@ -28,4 +36,8 @@ nav button:focus {
 
 .JB {
   font-size: 30px;
+}
+.gitLogo {
+  height: 30px;
+  border-radius: 30%;
 }
