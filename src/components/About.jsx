@@ -1,6 +1,7 @@
 const About = () => {
   return (
     <>
+      {/* <img src={Fam} className="Dev" /> */}
       Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo earum
       repellat perferendis laboriosam dolorem nobis et deleniti. Quaerat quae
       veniam quod nobis temporibus ipsam, suscipit aliquam hic. Veritatis,

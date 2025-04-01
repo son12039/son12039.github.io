@@ -4,8 +4,6 @@ import Background from "./components/Background";
 import Navigation from "./components/Navigation";
 import AppRoutes from "./routes/AppRoutes"; // 라우트를 별도의 파일로 분리
 
-import "./App.css";
-
 const App = () => {
   return (
     <Router>

@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import "../scss/Home.scss";
 import Dev from "../assets/Dev.png";
-
+import JS from "../assets/JS.png";
+import Java from "../assets/Java.png";
 const Home = () => {
-  const [text, setText] = useState(""); // 현재 표시되는 텍스트를 관리
+  const [text, setText] = useState("");
 
-  const message = "웹,, 백엔드개발자"; // 타이핑될 문구
+  const message = "F ull-stack Developer";
 
   useEffect(() => {
     let index = 0;
@@ -23,16 +24,28 @@ const Home = () => {
 
   return (
     <>
-      <div className="home-content">
-        <div className="left">
-          <div>방문해주셔서 감사합니다!</div>
-          <div>
-            저는 <span className="name">손정배</span>입니다
+      <div className="home">
+        <div className="home-content">
+          <div className="left">
+            <div>방문해주셔서 감사합니다!</div>
+            <div>
+              저는 <span className="name">손정배</span>입니다
+            </div>
+            <div className="write">{text}</div>
           </div>
-          <div className="write">{text}</div> {/* 타이핑 효과 적용된 텍스트 */}
+          <div className="right">
+            <img src={Dev} className="Dev" alt="Dev" />
+          </div>
         </div>
-        <div className="right">
-          <img src={Dev} className="Dev" alt="Dev" />
+        <div className="skills">
+          <div className="title">professional Skillset</div>
+          <div className="content">
+            <img src={Java} className="Java" alt="Java" />
+            <img src={JS} className="JS" alt="JS" />
+
+            {/* <div className="left">왼</div>
+            <div className="right">오</div> */}
+          </div>
         </div>
       </div>
     </>
